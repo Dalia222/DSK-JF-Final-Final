@@ -11,7 +11,7 @@ router.get("/", (req, res) => {
 router.get("/users", async (req, res) => {
   const users = await UserModel.find();
   console.log(users);
-  res.render("admin/users",{users});
+  res.render("admin/users", { users });
 });
 
 router.post("/users", async (req, res) => {
@@ -51,8 +51,10 @@ router.post("/users", async (req, res) => {
   }
 });
 
-router.get("/courses", (req, res) => {
-  res.render("admin/courses");
+router.get("/courses", async (req, res) => {
+  const users = await UserModel.find();
+  console.log(users);
+  res.render("admin/courses", { users });
 });
 
 router.post("/courses", async (req, res) => {
